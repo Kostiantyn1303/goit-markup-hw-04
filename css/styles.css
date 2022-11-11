@@ -114,8 +114,12 @@ img {
   line-height: 1.1428;
   letter-spacing: 0.02em;
 }
+
 .phone,
 .mail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--primary-text-color);
   padding-top: 32px;
   padding-bottom: 32px;
@@ -126,10 +130,19 @@ img {
   letter-spacing: 0.02em;
   text-decoration-line: none;
 }
+.header-icons {
+  fill: var(--primary-text-color);
+  margin-right: 10px;
+}
+.mail:hover .header-icons,
+.mail:focus .header-icons {
+  fill: var(--blue-color);
+}
 
 .mail:hover {
   color: var(--blue-color);
 }
+
 .phone:hover {
   color: var(--blue-color);
 }
