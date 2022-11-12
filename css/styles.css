@@ -10,6 +10,8 @@
   --backgrount-btn-active: #188ce8;
   --border-header: #ececec;
   --border-portfolio-pictures: #eeeeee;
+  --link-icons-color: #afb1b8;
+  --footer-background-icons: rgba(255, 255, 255, 0.1);
 }
 /* -----------------BODY------------------------- */
 h1,
@@ -117,10 +119,13 @@ img {
 
 .phone,
 .mail {
+  color: var(--primary-text-color);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-text-color);
+  width: 100%;
+  height: 100%;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -131,7 +136,7 @@ img {
   text-decoration-line: none;
 }
 .header-icons {
-  fill: var(--primary-text-color);
+  fill: currentColor;
   margin-right: 10px;
 }
 .mail:hover .header-icons,
@@ -141,6 +146,10 @@ img {
 
 .mail:hover {
   color: var(--blue-color);
+}
+.phone:hover .header-icons,
+.phone:focus .header-icons {
+  fill: var(--blue-color);
 }
 
 .phone:hover {
@@ -159,6 +168,17 @@ img {
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+}
+.overlay-hero {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/Imgherobackground.jpg);
+  background-size: cover;
 }
 .hero-title {
   color: var(--white-color);
@@ -215,6 +235,23 @@ img {
 .features-item {
   flex-basis: calc((100% - 90px) / 4);
 }
+.icons-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 270px;
+  height: 120px;
+  background: var(--backgrount-color-team);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.features-icons {
+  width: 70px;
+  height: 70px;
+  display: block;
+}
 .features-subtitle {
   color: var(--secondary-text-color);
   margin-bottom: 10px;
@@ -231,16 +268,10 @@ img {
   line-height: 1.7142;
   letter-spacing: 0.03em;
 }
+
 /* ------------SECTION ACTIVITIES----------------------- */
 .activities {
   padding-bottom: 94px;
-}
-.activities-list {
-  display: flex;
-  gap: 30px;
-}
-.activities-item {
-  flex-basis: calc((100% - 60px) / 3);
 }
 .activities-title {
   color: var(--secondary-text-color);
@@ -251,6 +282,14 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
 }
+.activities-list {
+  display: flex;
+  gap: 30px;
+}
+.activities-item {
+  flex-basis: calc((100% - 60px) / 3);
+}
+
 /* -------------SECTION OUR TEAM---------------------------- */
 .team {
   background-color: var(--backgrount-color-team);
@@ -276,9 +315,49 @@ img {
   flex-basis: calc((100% - 90px) / 4);
 }
 .team-text-wrapper {
-  padding: 30px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
-
+.team-soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.team-soc-item {
+  width: 44px;
+  height: 44px;
+}
+.team-soc-link {
+  width: 100%;
+  height: 100%;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.team-soc-link:hover,
+.team-soc-link:focus {
+  background-color: var(--blue-color);
+}
+.team-soc-link:hover .soc-icons {
+  fill: var(--white-color);
+}
+.team-soc-link:focus .soc-icons {
+  fill: var(--white-color);
+}
+.soc-icons {
+  fill: var(--link-icons-color);
+}
+.team-item {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
 .team-list > .team-item {
   background-color: var(--white-color);
 }
@@ -297,6 +376,52 @@ img {
   line-height: 1.1875;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+/* ---------------regular-customers-------- */
+.regular-customers {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.customers-title {
+  color: var(--secondary-text-color);
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+.customers-list {
+  display: flex;
+  gap: 30px;
+}
+.customers-item {
+  background-color: var(--white-color);
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+.customers-item:hover {
+  border-color: var(--blue-color);
+}
+
+.customers-link {
+  color: var(--link-icons-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.customers-link:hover,
+.customers-link:focus {
+  color: var(--blue-color);
+}
+.customers-icons {
+  fill: currentColor;
 }
 /* ---------------FOOTER--------------------- */
 .footer {
@@ -357,6 +482,52 @@ img {
 .phone-footer:hover {
   color: var(--blue-color);
 }
+.footer-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+.footer-soc-box {
+  margin-left: 70px;
+}
+.footer-address {
+  margin-left: 215px;
+}
+.soc-footer-text {
+  margin-bottom: 20px;
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.soc-footer-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.soc-footer-item {
+  height: 44px;
+  width: 44px;
+}
+.soc-footer-link {
+  width: 100%;
+  height: 100%;
+  background-color: var(--footer-background-icons);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.soc-footer-link:hover,
+.soc-footer-link:focus {
+  background-color: var(--blue-color);
+}
+.soc-icons-footer {
+  fill: var(--white-color);
+}
 /* --------------PORTFOLIO-------------- */
 
 .main-portfolio {
@@ -395,11 +566,17 @@ img {
   letter-spacing: 0.03em;
   cursor: pointer;
   border-radius: 4px;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
   color: var(--white-color);
   background-color: var(--blue-color);
+}
+.examples-list-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .examples-list {
